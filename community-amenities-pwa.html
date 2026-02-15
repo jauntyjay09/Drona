@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Community Amenities Directory - Find all services and facilities in your community">
+  <meta name="theme-color" content="#F0F7FF">
+  <title>Community Hub</title>
+  <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkNvbW11bml0eSBIdWIiLAogICJzaG9ydF9uYW1lIjogIkNvbW11bml0eSIsCiAgImRlc2NyaXB0aW9uIjogIkNvbW11bml0eSBBbWVuaXRpZXMgRGlyZWN0b3J5IiwKICAic3RhcnRfdXJsIjogIi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNGMEY3RkYiLAogICJ0aGVtZV9jb2xvciI6ICIjRjBGN0ZGIiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCM2FXUjBhRDBpTWpBd0lpQm9aV2xuYUhROUlqSXdNQ0lnZG1sbGQwSnZlRDBpTUNBd0lESXdNQ0F5TURBaUlHWnBiR3c5SW01dmJtVWlJSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStQSEpsWTNRZ2VEMGlNQ0lnZVQwaU1DSWdkMmxrZEdnOUlqSXdNQ0lnYUdWcFoyaDBQU0l5TURBaUlISjRQU0l4TmlJZ1ptbHNiRDBpSTBZd1JqZEdHaUl2UGp4d1lYUm9JR1E5SWsweE1EQWdORFZETmpVZ05EVWdORFVnTmpVZ05EVWdNVEF3Y3pVMUlEVTFJREUxTlNBMU5TQTFOUzAxTlNBMU5TMDFOU0ExTlMwMU5TMDFORFU2YlRBZ01UQXdZekF0TXpBZ01qUXVOUzB6TUNBMU5DQXdJRFV6TGpnMUlEQWdNVEF3TGpVZ01DQXpNQ0F5TkM0MUlETXdJRFUwSURBZ016QWdNREF0TXpBdE1qUXVOUzB6TUMBMU5DQXdJRE13SURBdE16QWdNalF1TlMwek1DQTFOR0V6TUM0eElETXdMakVnTUNBd0lEQWdOVE11T0RVZ01DQXhNREF1TlNBd0lETXdJREkwTGpVZ016QWdOVFFnTUNBek1Eb2lJR1pwYkd3OUlpTTBSVFkxUmpnaUx6NDhMMk55WTJ4bFBqeDBaWGgwSUhnOUlqRXdNQ0lnZVQwaU1UQXdJaUIwWlhoMExXRnVZMmh2Y2owaWJXbGtaR3hsSWlCbWIyNTBMWE5wZW1VOUlqTXdJaUJtYjI1MExYZGxhV2RvZEQwaVltOXNaQ0lnWm1sc2JEMGlJekExTlRJNE15SStRend2ZEdWNGRENDhMM04yWno0PSIsCiAgICAgICJzaXplcyI6ICIxOTJ4MTkyIiwKICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIKICAgIH0sCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCM2FXUjBhRDBpTlRFeUlpQm9aV2xuYUhROUlqVXhNaUlnZG1sbGQwSnZlRDBpTUNBd0lEVXhNaUExTVRJaUlHWnBiR3c5SW01dmJtVWlJSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStQSEpsWTNRZ2VEMGlNQ0lnZVQwaU1DSWdkMmxrZEdnOUlqVXhNaUlnYUdWcFoyaDBQU0kxTVRJaUlISjRQU0kwTUNJZ1ptbHNiRDBpSTBZd1JqZEdHaUl2UGp4d1lYUm9JR1E5SWsweU5UWWdNVEUxWXpBdE56QWdOVGt1TlMwM01DQXhNemN1TlNBd0lERXpOeTQxTFRjd0lEVTVMalV0TnpBZ01UTTNMalVnTUNBME1DQTFPUzQxTFRjd0lERTBNQzQxSURBZ056QWdOVGt1TlNBM01DQXhNelkxSURBZ016QWdOVGt1TlNBM01DQXhOREFnTUNBM01DQTFPUZBOVE1nTnpBZ05qWXVNallnTUNBd0lEQWdNVE0zTGpVZ01DQXlOVFlnTUNBM01DQTFPUzQxSURjd0lERTBNQ0F3SURjd0lEQWdOekF0TlRrdU5TQTNNQzB4TXpZdU5TQXdMVGN3TFRVNUxqVXRZeUF3TFRNd0lEWXhMamd5TFRjd0lERTBNQzB4TmpndU1EVWdNQzB4TWpBZ05Ua3VOVTB3SURJMU5tTXdMVGMySURZd0xqVTBMVGN3SURFek9DQXdJREUxTkNBeUlESXhNaTR5SURBdE16ZzRMVEUzTkM0eExUTTRPQzB6T0RnZ01TQXRNU0F3SURBdE16ZzRJREUzTkM0eExUTTRPQ0F6T0RndE1TQXhJREFnTUNBeU1USXVNaUF5SURjMElEWXdMalUwSURjd0lERXpPQ0F3SURFMU5DMDBJREkxTmkweU1USXVNaUF3TFRNNExURTNOQzR4TFRNNExUTTRPQzB4SURFdE1DQXdMVE00T0NBeE56UXVNUzB6T0RnZ016ZzRJREUxTkNBd0lESXhNaTR5SURJdU5TQTNOQ0EyTUM0MUlEY3dJREV6T0NBd0lERTFOQzQwZUcwaU5DQXlOVFpqTUNBNE1pMDJPQzQzSURjd0xUSTFOaUF3TFRjd0lEQWdNQ0F5TlRZZ05qZ3VOU0EzTUNBeU5UWWdNRWd6TmpCak1pQTFMakVnTkM0MElEY3VNVFU0SURFZ01USXRORE11TmpnZ01TQTBMalVnTUNBM0xqSXhOQ0F5TGpjMklEa3VOU0F4TUM0MWJEQXVOU0E0TGpVMElESXVNVFlnTnk0d09DQTBMamNnTkM0ekxURXVNVFVnTXk0M0xUTWdOaTQzTFRVdU9DQTVMVGN1TlNBMUxqRXRNeTQxTVNBNExqRXROaTQxSURjdU5TMDRMalVnT0M0MUxUVXVOU0E0TGpVdE1pQXlMalV0TkNBMUxqTXROaTQwSURjdE5pNDBjekF1TlMwekxqYzRJREl1TlMwMUxqVWdNQ0EwTGpjdE1pQTRMalV0TkM0ekxEWWdPQ0E0TGpVZ01TQXdJREF0TkM0eklEWXVOUzAwSURndU5TQTRMalVnTkM0MGlERXVNaUEyTGpRMklEa2dOeTQwSURJd0lEUWdOQ0EyTGpVZ01DQXhNQzAwTGpjZ01DMHhNZ0F4SURBdE5DQXlMalV0TlM0eklEWXVOQzAzSURjdE5DQTBJREF0T0NBNExqVXRNaTQ0SURZdU5TMDRMalVnT0MwNElERXVNeUE0TGpZZ05DQXhNQzR4SURZdU15QXlJRGd1TlMweUlEZ3VOVG9pSUdacGJHdzlJaU0wUlRZMVJqZ2lMejQ4TDJOcGNtTnNaVDQ4ZEdWNGRDQjRQU0l5TlRZaUllVDBpTWpVMklpQjBaWGgwTFdGdVkyaHZjajBpYldsa1pHeGxJaUJtYjI1MExYTnBlbVU5SWpjd0lpQm1iMjUwTFhkbGFXZG9kRDBpWW05c1pDSWdabWxzYkQwaUl6QTFOVE00TXlJK1FUd3ZkR1Y0ZEQ0OEwzTjJaejQ9IiwKICAgICAgInNpemVzIjogIjUxMng1MTIiLAogICAgICAidHlwZSI6ICJpbWFnZS9zdmcreG1sIgogICAgfQogIF0KfQ==">
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjE5MiIgaGVpZ2h0PSIxOTIiIHJ4PSIxNiIgZmlsbD0iI0YwRjdGRiIvPjxwYXRoIGQ9Ik0xMDAgNDVDNjUgNDUgNDUgNjUgNDUgMTAwczU1IDU1IDE1NSA1NSA1NS01NSA1NS0xMDB6IiBmaWxsPSIjNEU2NUY4Ii8+PC9jaXJjbGU+PHRleHQgeD0iMTAwIiB5PSIxMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDU1MjgzIj5DPC90ZXh0Pjwvc3ZnPg==">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="astra.css">
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    const { useState, useEffect, useMemo } = React;
+
+    // Amenities Data
+    const amenitiesData = [
+      {
+        id: 1,
+        name: "Swimming Pool",
+        category: "Sports & Fitness",
+        icon: "🏊",
+        color: "linear-gradient(135deg, #38BDF8, #0EA5E9)",
+        timing: "6:00 AM - 10:00 PM",
+        location: "Building A, Ground Floor",
+        contact: "+1 (555) 123-4501",
+        spoc: "Sarah Johnson",
+        isOpen: true
+      },
+      {
+        id: 2,
+        name: "Gymnasium",
+        category: "Sports & Fitness",
+        icon: "💪",
+        color: "linear-gradient(135deg, #F59E0B, #D97706)",
+        timing: "5:00 AM - 11:00 PM",
+        location: "Building A, Level 1",
+        contact: "+1 (555) 123-4502",
+        spoc: "Mike Anderson",
+        isOpen: true
+      },
+      {
+        id: 3,
+        name: "Medical Center",
+        category: "Health & Safety",
+        icon: "🏥",
+        color: "linear-gradient(135deg, #EF4444, #DC2626)",
+        timing: "24/7 Emergency Available",
+        location: "Main Building, Ground Floor",
+        contact: "+1 (555) 123-4503",
+        spoc: "Dr. Emily Chen",
+        isOpen: true
+      },
+      {
+        id: 4,
+        name: "Security Office",
+        category: "Health & Safety",
+        icon: "🛡️",
+        color: "linear-gradient(135deg, #6366F1, #4F46E5)",
+        timing: "24/7 Available",
+        location: "Main Entrance Gate",
+        contact: "+1 (555) 123-4504",
+        spoc: "James Wilson",
+        isOpen: true
+      },
+      {
+        id: 5,
+        name: "Hair Salon",
+        category: "Personal Care",
+        icon: "💇",
+        color: "linear-gradient(135deg, #EC4899, #DB2777)",
+        timing: "9:00 AM - 8:00 PM",
+        location: "Commercial Area, Shop 12",
+        contact: "+1 (555) 123-4505",
+        spoc: "Lisa Martinez",
+        isOpen: true
+      },
+      {
+        id: 6,
+        name: "Plumber Service",
+        category: "Maintenance",
+        icon: "🔧",
+        color: "linear-gradient(135deg, #10B981, #059669)",
+        timing: "Mon-Sat: 8:00 AM - 6:00 PM",
+        location: "Maintenance Office, Block C",
+        contact: "+1 (555) 123-4506",
+        spoc: "Robert Kumar",
+        isOpen: true
+      },
+      {
+        id: 7,
+        name: "Electrician Service",
+        category: "Maintenance",
+        icon: "⚡",
+        color: "linear-gradient(135deg, #FBBF24, #F59E0B)",
+        timing: "24/7 Emergency Service",
+        location: "Maintenance Office, Block C",
+        contact: "+1 (555) 123-4507",
+        spoc: "David Lee",
+        isOpen: true
+      },
+      {
+        id: 8,
+        name: "Tuition Center",
+        category: "Education",
+        icon: "📚",
+        color: "linear-gradient(135deg, #8B5CF6, #7C3AED)",
+        timing: "Mon-Fri: 4:00 PM - 8:00 PM",
+        location: "Community Hall, Floor 2",
+        contact: "+1 (555) 123-4508",
+        spoc: "Prof. Amit Sharma",
+        isOpen: false
+      },
+      {
+        id: 9,
+        name: "Dance Classes",
+        category: "Education",
+        icon: "💃",
+        color: "linear-gradient(135deg, #F472B6, #EC4899)",
+        timing: "Tue, Thu, Sat: 6:00 PM - 8:00 PM",
+        location: "Community Hall, Floor 1",
+        contact: "+1 (555) 123-4509",
+        spoc: "Maya Patel",
+        isOpen: false
+      },
+      {
+        id: 10,
+        name: "Community Store",
+        category: "Shopping",
+        icon: "🛒",
+        color: "linear-gradient(135deg, #06B6D4, #0891B2)",
+        timing: "7:00 AM - 10:00 PM",
+        location: "Commercial Area, Shop 1-3",
+        contact: "+1 (555) 123-4510",
+        spoc: "Raj Mehta",
+        isOpen: true
+      },
+      {
+        id: 11,
+        name: "Canteen Services",
+        category: "Food & Dining",
+        icon: "🍽️",
+        color: "linear-gradient(135deg, #FB923C, #F97316)",
+        timing: "7:00 AM - 9:00 PM",
+        location: "Main Building, Ground Floor",
+        contact: "+1 (555) 123-4511",
+        spoc: "Chef Antonio",
+        isOpen: true
+      }
+    ];
+
+    const categories = ["All", "Sports & Fitness", "Health & Safety", "Personal Care", "Maintenance", "Education", "Shopping", "Food & Dining"];
+
+    function App() {
+      const [searchQuery, setSearchQuery] = useState("");
+      const [selectedCategory, setSelectedCategory] = useState("All");
+      const [showInstallBanner, setShowInstallBanner] = useState(false);
+      const [deferredPrompt, setDeferredPrompt] = useState(null);
+
+      useEffect(() => {
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register(generateServiceWorker())
+            .catch(err => console.log('Service Worker registration failed:', err));
+        }
+
+        // Handle install prompt
+        const handleBeforeInstallPrompt = (e) => {
+          e.preventDefault();
+          setDeferredPrompt(e);
+          setShowInstallBanner(true);
+        };
+
+        window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+
+        return () => {
+          window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+        };
+      }, []);
+
+      const filteredAmenities = useMemo(() => {
+        return amenitiesData.filter(amenity => {
+          const matchesSearch = amenity.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                               amenity.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                               amenity.spoc.toLowerCase().includes(searchQuery.toLowerCase());
+          
+          const matchesCategory = selectedCategory === "All" || amenity.category === selectedCategory;
+          
+          return matchesSearch && matchesCategory;
+        });
+      }, [searchQuery, selectedCategory]);
+
+      const handleInstallClick = async () => {
+        if (!deferredPrompt) return;
+
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        
+        setDeferredPrompt(null);
+        setShowInstallBanner(false);
+      };
+
+      const groupedAmenities = useMemo(() => {
+        const groups = {};
+        filteredAmenities.forEach(amenity => {
+          if (!groups[amenity.category]) {
+            groups[amenity.category] = [];
+          }
+          groups[amenity.category].push(amenity);
+        });
+        return groups;
+      }, [filteredAmenities]);
+
+      return (
+        <div className="app-container">
+          <header className="header">
+            <div className="header-content">
+              <div className="header-top">
+                <div className="logo">C</div>
+                <div className="header-title">
+                  <h1>Astra Hub</h1>
+                  <div className="subtitle">Your one-stop amenities directory</div>
+                </div>
+              </div>
+              
+              <div className="search-container">
+                <span className="search-icon">🔍</span>
+                <input
+                  type="search"
+                  className="search-input"
+                  placeholder="Search amenities, services, or contacts..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+              </div>
+            </div>
+          </header>
+
+          <div className="filter-container">
+            <div className="filter-pills">
+              {categories.map(category => (
+                <button
+                  key={category}
+                  className={`filter-pill ${selectedCategory === category ? 'active' : ''}`}
+                  onClick={() => setSelectedCategory(category)}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <main className="main-content">
+            {filteredAmenities.length === 0 ? (
+              <div className="empty-state">
+                <div className="empty-icon">🔍</div>
+                <div className="empty-title">No results found</div>
+                <div className="empty-text">Try adjusting your search or filter</div>
+              </div>
+            ) : (
+              Object.entries(groupedAmenities).map(([category, items]) => (
+                <div key={category}>
+                  <h2 className="section-title">
+                    <span className="section-icon">{getCategoryIcon(category)}</span>
+                    {category}
+                  </h2>
+                  <div className="cards-grid">
+                    {items.map(amenity => (
+                      <AmenityCard key={amenity.id} amenity={amenity} />
+                    ))}
+                  </div>
+                </div>
+              ))
+            )}
+          </main>
+
+          {showInstallBanner && (
+            <div className="install-banner">
+              <div className="install-content">
+                <div className="install-title">Install Community Hub</div>
+                <div className="install-text">Add to home screen for quick access</div>
+              </div>
+              <button className="install-button" onClick={handleInstallClick}>
+                Install
+              </button>
+              <button className="close-banner" onClick={() => setShowInstallBanner(false)}>
+                ×
+              </button>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    function AmenityCard({ amenity }) {
+      const handleContact = () => {
+        window.location.href = `tel:${amenity.contact}`;
+      };
+
+      return (
+        <div className="amenity-card">
+          <div className="card-header">
+            <div className="card-icon" style={{ background: amenity.color }}>
+              {amenity.icon}
+            </div>
+            <div className="card-title">
+              <h3>{amenity.name}</h3>
+              <span className={`card-status ${amenity.isOpen ? 'status-open' : 'status-closed'}`}>
+                <span>●</span> {amenity.isOpen ? 'Open' : 'Closed'}
+              </span>
+            </div>
+          </div>
+
+          <div className="card-info">
+            <div className="info-row">
+              <span className="info-icon">🕐</span>
+              <div className="info-text">
+                <div className="info-label">Timings</div>
+                {amenity.timing}
+              </div>
+            </div>
+
+            <div className="info-row">
+              <span className="info-icon">📍</span>
+              <div className="info-text">
+                <div className="info-label">Location</div>
+                {amenity.location}
+              </div>
+            </div>
+
+            <div className="info-row">
+              <span className="info-icon">👤</span>
+              <div className="info-text">
+                <div className="info-label">Contact Person</div>
+                {amenity.spoc}
+              </div>
+            </div>
+
+            <div className="info-row">
+              <span className="info-icon">📞</span>
+              <div className="info-text">
+                <div className="info-label">Phone</div>
+                {amenity.contact}
+              </div>
+            </div>
+          </div>
+
+          <button className="contact-button" onClick={handleContact}>
+            Contact Now
+          </button>
+        </div>
+      );
+    }
+
+    function getCategoryIcon(category) {
+      const icons = {
+        "Sports & Fitness": "🏃",
+        "Health & Safety": "🏥",
+        "Personal Care": "💆",
+        "Maintenance": "🔧",
+        "Education": "🎓",
+        "Shopping": "🛍️",
+        "Food & Dining": "🍴"
+      };
+      return icons[category] || "📌";
+    }
+
+    function generateServiceWorker() {
+      const swCode = `
+        const CACHE_NAME = 'community-hub-v1';
+        const urlsToCache = [
+          '/',
+          '/offline.html'
+        ];
+
+        self.addEventListener('install', event => {
+          event.waitUntil(
+            caches.open(CACHE_NAME)
+              .then(cache => cache.addAll(urlsToCache))
+          );
+        });
+
+        self.addEventListener('fetch', event => {
+          event.respondWith(
+            caches.match(event.request)
+              .then(response => response || fetch(event.request))
+              .catch(() => caches.match('/offline.html'))
+          );
+        });
+      `;
+      
+      const blob = new Blob([swCode], { type: 'application/javascript' });
+      return URL.createObjectURL(blob);
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
